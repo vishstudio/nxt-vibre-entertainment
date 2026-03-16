@@ -59,7 +59,7 @@ export const ARTISTS: Artist[] = [
     id: "a1",
     name: "djash ley",
     genre: "Indohouse",
-    bio: "Spiritual, and deeply rooted from the Gamelan scales.",
+    bio: "Melodic, hypnotic, and deeply spiritual soundscapes rooted in Indian traditions.",
     // Moody Male Portrait
     imageUrl:
       "https://scontent.fmru2-1.fna.fbcdn.net/v/t39.30808-6/512663251_9961131060608546_1217954378827536643_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=53a332&_nc_ohc=839C0H07I38Q7kNvwE1OATG&_nc_oc=AdkxotB8E7iCepFGQ9l-D_81WLsrNXcXD5XJnRE9Lm6ORg63wEiOCrrOCFQ0HhtVdFY&_nc_zt=23&_nc_ht=scontent.fmru2-1.fna&_nc_gid=uDlOpsLwbZHZK2y7fKkDAQ&_nc_ss=8&oh=00_Afz9pt4Ms43FpseZJA4FMNdb3ffKj6pttDe2JYbOHoBJ7A&oe=69BE0428",
@@ -68,7 +68,7 @@ export const ARTISTS: Artist[] = [
     id: "a2",
     name: "VSH",
     genre: "Afrohouse/Afrotech",
-    bio: "Melodic ands Minimalist soundscapes that bend time and space.",
+    bio: "Spiritual and minimalist soundscapes that bend time and space.",
     // Edgy / Flash Photography Portrait
     imageUrl:
       "https://scontent.fmru2-1.fna.fbcdn.net/v/t39.30808-1/652324132_26346202191711090_2540311865484074837_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=E6PFY-olSXQQ7kNvwHQwyBs&_nc_oc=AdlZoStsoYVjdbOAjtzxFi3C5tW0dZ-vENHPAW_D9Ly3rE8o2Y_57l3sIGHszd2ifU8&_nc_zt=24&_nc_ht=scontent.fmru2-1.fna&_nc_gid=-B1HoWfBPWncxRiD7bCT8g&_nc_ss=8&oh=00_AfyiqXYCjvGm8b05Yk3e7T6PtaQ6fgzX8Vs6PJERQx9VAg&oe=69BE0B06",
