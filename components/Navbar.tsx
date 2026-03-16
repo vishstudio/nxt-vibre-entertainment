@@ -35,6 +35,13 @@ const Navbar: React.FC = () => {
     { label: 'CONTACT', href: '#footer', desc: 'Signal Us' }
   ];
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const buildHref = (href: string) => {
+    if (!basePath) return href;
+    if (href.startsWith('#')) return `${basePath}/${href}`;
+    return `${basePath}${href}`;
+  };
+
   return (
     <>
       <nav
@@ -47,7 +54,7 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
 
           {/* Logo */}
-          <a href="/" className="relative z-50 group mix-blend-difference text-white">
+          <a href={buildHref('/')} className="relative z-50 group mix-blend-difference text-white">
             <span className="font-display font-black text-2xl tracking-tighter block leading-none">VIBRÉ</span>
           </a>
 
@@ -55,9 +62,9 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center gap-12 mix-blend-difference text-white">
             {/* Nav Items as technical labels */}
             <div className={`flex gap-12 text-[10px] font-mono font-bold tracking-[0.2em] uppercase transition-all duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0 translate-x-10 pointer-events-none'}`}>
-              <a href="/#events" className="hover:text-brand transition-colors">[Events]</a>
-              <a href="/#artists" className="hover:text-brand transition-colors">[Artists]</a>
-              <a href="/shop" className="hover:text-brand transition-colors">[Merch]</a>
+              <a href={buildHref('/#events')} className="hover:text-brand transition-colors">[Events]</a>
+              <a href={buildHref('/#artists')} className="hover:text-brand transition-colors">[Artists]</a>
+              <a href={buildHref('/shop')} className="hover:text-brand transition-colors">[Merch]</a>
             </div>
 
             {/* Menu Trigger */}
@@ -118,7 +125,7 @@ const Navbar: React.FC = () => {
               {navLinks.map((link, idx) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={buildHref(link.href)}
                   onClick={() => setIsOpen(false)}
                   className="group relative flex items-center md:py-4"
                 >
