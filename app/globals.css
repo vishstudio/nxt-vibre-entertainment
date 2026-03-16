@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), sans-serif;
+
+  --color-canvas: #050404;
+  --color-surface: #141211;
+  --color-paint: #EAE8E4;
+  --color-brand: #FF4D00;
+
+  --background-image-grain: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.07"/%3E%3C/svg%3E');
+
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-paint);
+  overflow-x: hidden;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-canvas);
+}
+.text-outline {
+  -webkit-text-stroke: 1px rgba(234, 232, 228, 0.3);
+  color: transparent;
+}
+.text-outline-hover:hover {
+  -webkit-text-stroke: 1px var(--color-brand);
+  color: transparent;
+}
