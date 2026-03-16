@@ -80,8 +80,21 @@ const Carousel: React.FC<CarouselProps> = ({
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setIsHovered(false)}
     >
-      {/* Controls - Visible on mobile, visible on hover on desktop */}
-      <div className="flex absolute top-1/2 -translate-y-1/2 left-2 right-2 md:-left-6 md:-right-6 justify-between pointer-events-none z-20 opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 transition-opacity duration-300">
+      {/* Controls - on mobile they appear below items; on desktop they're side controls (hover visible) */}
+
+      <div
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory gap-4 md:gap-6 pb-7 pt-5 hide-scrollbar"
+      >
+        {React.Children.map(children, (child, index) => (
+          <div key={index} className={`shrink-0 snap-start ${itemClassName}`}>
+            {child}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex pointer-events-none z-20 opacity-100 transition-opacity duration-300 mt-4 justify-center gap-4 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-2 md:right-2 md:justify-between md:gap-0 md:opacity-0 md:group-hover/carousel:opacity-100">
         <button
           onClick={() => scroll('left')}
           disabled={!canScrollLeft}
@@ -96,18 +109,6 @@ const Carousel: React.FC<CarouselProps> = ({
         >
           <ChevronRight size={24} />
         </button>
-      </div>
-
-      <div
-        ref={scrollRef}
-        onScroll={checkScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-4 hide-scrollbar"
-      >
-        {React.Children.map(children, (child, index) => (
-          <div key={index} className={`shrink-0 snap-start ${itemClassName}`}>
-            {child}
-          </div>
-        ))}
       </div>
 
       {/* Elegant Progress/Scrollbar */}
